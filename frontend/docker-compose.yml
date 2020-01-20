@@ -1,0 +1,26 @@
+version: "3"
+
+networks:
+	ingress_default:
+		external: true
+
+services:
+	training-oaxaca-com:
+		image: registry.wsantos.net/training-oaxaca-com:latest
+		restart: always
+		networks:
+			- "ingress_default"
+		labels:
+			- "traefik.enable=true"
+			- "traefik.frontend.rule=Host:training-oaxaca-com.wsantos.net"
+			- "traefik.docker.network=ingress_default"
+
+	waiting-oaxaca-com:
+		image: registry.wsantos.net/waiting-oaxaca-com:latest
+		restart: always
+		networks:
+			- "ingress_default"
+		labels:
+			- "traefik.enable=true"
+			- "traefik.frontend.rule=Host:waiting-oaxaca-com.wsantos.net"
+			- "traefik.docker.network=ingress_default"
