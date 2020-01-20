@@ -12,13 +12,13 @@ Docker, by itself, just handles containers - you must manually create and destro
 ### microservices
 The oaxaca-com stack consists of three core applications: two web UI, one backend API. The API persists data to a Postgres instance (which also runs as a container, but with a persistent storage volume).
 
-### training-oaxaca-com
+#### training-oaxaca-com
 Is the web application for training Oaxaca's staff. It is simply a React app that pulls menu data down from the api-oaxaca-com service. When deployed, the container will listen on <container's hostname>:8080. The compose config for this service is in frontend/docker-compose.yml.
 
-### waiting-oaxaca-com
+#### waiting-oaxaca-com
 Is the web application for running Oaxaca's day-to-day restaurant business. It is used by waiters to manage cutsomer orders. It is simply a React app that pushes and pulls data from the api-oaxaca-com service. When deployed, the container will listen on <container's hostname>:8080. The compose config for this this service is in frontend/docker-compose.yml.
 
-### api-oaxaca-com
+#### api-oaxaca-com
 Is the backend RESTful HTTP API for managing data in Oaxaca's database. It defines resources and allows GET/POST/PUT/PATCH/DELETE opereations on those resources. It handles database schema, input validation, authentication, and authorisation. This service depends on a Postgres container with the hostname 'postgres' on a separate Docker virtual network listening on 5432. The compose config for this service (and Postgres) is in backend/docker-compose.yml.
 
 :)
