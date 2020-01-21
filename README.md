@@ -12,7 +12,7 @@ Docker, by itself, just handles containers - you must manually create and destro
 ### our microservices
 Docker makes it easier to break your project up into smaller applications that all run alongside eachother. Each mini application can be worked on independently by specific group of people. This is decoupling! These services are often referred to as 'microservices'.
 
-The oaxaca-com stack consists of three core microservicess: two web UIs and one backend API. The API persists data to a Postgres instance (which also runs as a container, but with a persistent storage volume).
+The oaxaca-com stack consists of four core microservicess: two web UIs and one backend API. The API persists data to a Postgres instance (which also runs as a container, but with a persistent storage volume).
 
 #### training-oaxaca-com
 Is the web application for training Oaxaca's staff. It is simply a React app that pulls menu data down from the api-oaxaca-com service. When deployed, the container will listen on <container's hostname>:8080. The compose config for this service is in frontend/docker-compose.yml.
