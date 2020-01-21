@@ -9,8 +9,10 @@ In Docker, your application (which can be/do anything, and can depend on a whole
 ### and what is compose?
 Docker, by itself, just handles containers - you must manually create and destroy those containers via the command line. This can quickly become tedious, especially when your program/project consists of multiple containers (usually referred to as a 'stack'). Docker compose is a small CLI tool that allows you to define (or compose) stacks in a configuration file, and then deploy and re-deploy those stacks using one command. These configuration files are always named 'docker-compose.yml' and are written in YAML, a special mark-up language.
 
-### microservices
-The oaxaca-com stack consists of three core applications: two web UI, one backend API. The API persists data to a Postgres instance (which also runs as a container, but with a persistent storage volume).
+### our microservices
+Docker makes it easier to break your project up into smaller applications that all run alongside eachother. Each mini application can be worked on independently by specific group of people. This is decoupling! These services are often referred to as 'microservices'.
+
+The oaxaca-com stack consists of three core microservicess: two web UIs and one backend API. The API persists data to a Postgres instance (which also runs as a container, but with a persistent storage volume).
 
 #### training-oaxaca-com
 Is the web application for training Oaxaca's staff. It is simply a React app that pulls menu data down from the api-oaxaca-com service. When deployed, the container will listen on <container's hostname>:8080. The compose config for this service is in frontend/docker-compose.yml.
