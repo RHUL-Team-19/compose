@@ -1,28 +1,28 @@
 version: "3"
 
 networks:
-	postgres:
-	ingress_default:
-		external: true
+  postgres:
+  ingress_default:
+    external: true
 
 services:
-	postgres:
-		image: postgres:latest
-		restart: always
-		networks:
-			- "postgres"
-		environment:
-			- "POSTGRES_PASSWORD=%hJl7£21bSpp./ws"
-		labels:
-			- "traefik.enable=false"
+  postgres:
+    image: postgres:latest
+    restart: always
+    networks:
+      - "postgres"
+    environment:
+      - "POSTGRES_PASSWORD=%hJl7£21bSpp./ws"
+    labels:
+      - "traefik.enable=false"
 
-	api-oaxaca-com:
-		image: registry.wsantos.net/api-oaxaca-com:latest
-		restart: always
-		networks:
-			- "postgres"
-			- "ingress_default"
-		labels:
-			- "traefik.enable=true"
-			- "traefik.frontend.rule=Host:api-oaxaca-com.wsantos.net"
-			- "traefik.docker.network=ingress_default"
+  api-oaxaca-com:
+    image: registry.wsantos.net/api-oaxaca-com:latest
+    restart: always
+    networks:
+      - "postgres"
+      - "ingress_default"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:api-oaxaca-com.wsantos.net"
+      - "traefik.docker.network=ingress_default"
