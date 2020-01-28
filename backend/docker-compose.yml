@@ -17,7 +17,7 @@ services:
       - "traefik.enable=false"
 
   api-oaxaca-com:
-    image: registry.wsantos.net/api-oaxaca-com:latest
+    image: registry.wsantos.net/oaxaca-com/api-oaxaca-com:latest
     restart: always
     networks:
       - "postgres"

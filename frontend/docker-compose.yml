@@ -6,7 +6,7 @@ networks:
 
 services:
   training-oaxaca-com:
-    image: registry.wsantos.net/training-oaxaca-com:latest
+    image: registry.wsantos.net/oaxaca-com/training-oaxaca-com:latest
     restart: always
     networks:
       - "ingress_default"
@@ -16,7 +16,7 @@ services:
       - "traefik.docker.network=ingress_default"
 
   waiting-oaxaca-com:
-    image: registry.wsantos.net/waiting-oaxaca-com:latest
+    image: registry.wsantos.net/oaxaca-com/waiting-oaxaca-com:latest
     restart: always
     networks:
       - "ingress_default"
