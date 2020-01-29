@@ -13,6 +13,8 @@ services:
       - "postgres"
     environment:
       - "POSTGRES_PASSWORD=%hJl7£21bSpp./ws"
+    volumes:
+      - "/home/oaxaca-com/mount/api-oaxaca-com/postgres:/var/lib/postgresql/data"
     labels:
       - "traefik.enable=false"
 
