@@ -10,6 +10,9 @@ services:
     restart: always
     networks:
       - "ingress_default"
+    environment:
+      - "SERVER_HOST=0.0.0.0"
+      - "SERVER_PORT=8080"
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:training-oaxaca-com.wsantos.net"
@@ -20,6 +23,22 @@ services:
     restart: always
     networks:
       - "ingress_default"
+    environment:
+      - "SERVER_HOST=0.0.0.0"
+      - "SERVER_PORT=8080"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:waiting-oaxaca-com.wsantos.net"
+      - "traefik.docker.network=ingress_default"
+
+  menu-oaxaca-com:
+    image: registry.wsantos.net/oaxaca-com/menu-oaxaca-com:latest
+    restart: always
+    networks:
+      - "ingress_default"
+    environment:
+      - "SERVER_HOST=0.0.0.0"
+      - "SERVER_PORT=8080"
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:waiting-oaxaca-com.wsantos.net"
