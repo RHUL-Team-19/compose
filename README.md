@@ -20,6 +20,10 @@ Is the web application for training Oaxaca's staff. It is simply a React app tha
 #### waiting-oaxaca-com
 Is the web application for running Oaxaca's day-to-day restaurant business. It is used by waiters to manage cutsomer orders. It is simply a React app that pushes and pulls data from the api-oaxaca-com service. When deployed, the container will listen on <container's hostname>:8080. The compose config for this this service is in frontend/docker-compose.yml.
 
+#### menu-oaxaca-com
+Is the web application that allows customers to view and filter meals available at Oaxaca's restaurants. It is a single page application that fetches all meals from the API, then visualises them in a list. Vario
+us filters can be applied to hide/show meals based on dietary requirements.
+
 #### api-oaxaca-com
 Is the backend RESTful HTTP API for managing data in Oaxaca's database. It defines resources and allows GET/POST/PUT/PATCH/DELETE opereations on those resources. It handles database schema, input validation, authentication, and authorisation. This service depends on a Postgres container with the hostname 'postgres' on a separate Docker virtual network listening on 5432. The compose config for this service (and Postgres) is in backend/docker-compose.yml.
 
